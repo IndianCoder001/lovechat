@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>FireChat</title>
+	<link rel="shortcut icon" href="favicons/webchat.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/chat.css" />
+    <script src="script.js"></script>
+	
+</head>
+<body>
+    <div id="chat-container">
+        <div id="side-bar">
+			<div id="side-header">
+				<input type="text" name="Search" id="user_search" placeholder="Search" onkeyup="searchUserName()" maxlength="13" >
+			</div>
+			
+			<div class="user_profiles">
+				<ul id="allUser">
+				<li id="nouser" style="
+				display:none;
+				background-color: rgba(255, 250, 250,0.25);
+				color:snow;
+				font-size:20px;
+				border-radius: 20px 20px 20px 20px;
+				height: 180px;
+				vertical-align: middle;
+				text-align: center;
+				padding:40px;
+				font-size: 3.2em;
+				margin-top: 60%;">
+
+				<a id="nouser">No User Found</a></li>
+	
+					
+				<li><button type="button" id="userSelect" onclick="userData('Admin','img/users/love.jpg')"><img src="img/users/love.jpg" alt="Avatar" class="avatar"> <a>Admin</a></button></li>
+	
+				
+				<li><button type="button" id="userSelect" onclick="userData('Kali','img/users/user2.jpg')"><img src="img/users/user2.jpg" alt="Avatar" class="avatar"> <a>Kali</a></button></li>
+	
+
+				<li><button type="button" id="userSelect" onclick="userData('Koodal','img/users/wapp.png')"><img src="img/users/wapp.png" alt="Avatar" class="avatar"> <a>Koodal</a></button></li>
+	
+				<li><button type="button" id="userSelect" onclick="userData('BlackHat','img/users/user1.jpg')"><img src="img/users/user1.jpg" alt="Avatar" class="avatar"> <a>BlackHat</a></button></li>
+	
+				
+				<li><button type="button" id="userSelect" onclick="userData('Bala','img/users/insta.png')"><img src="img/users/insta.png" alt="Avatar" class="avatar"> <a>Bala</a></button></li>
+	
+
+				<li><button type="button" id="userSelect" onclick="userData('John','img/users/wapp.png')"><img src="img/users/wapp.png" alt="Avatar" class="avatar"> <a>John</a></button></li>
+	
+				<li><button type="button" id="userSelect" onclick="userData('Legend','img/users/user2.jpg')"><img src="img/users/user2.jpg" alt="Avatar" class="avatar"> <a>Legend</a></button></li>
+	
+				
+				<li><button type="button" id="userSelect" onclick="userData('Friends Forever','img/users/friends.jpg')"><img src="img/users/friends.jpg" alt="Avatar" class="avatar"> <a>Friends Forever</a></button></li>
+	
+
+				<li><button type="button" id="userSelect" onclick="userData('MSD07','img/users/insta.png')"><img src="img/users/insta.png" alt="Avatar" class="avatar"> <a>MSD07</a></button></li>
+	
+				<li><button type="button" id="userSelect" onclick="userData('Virat','img/users/wapp.png')"><img src="img/users/wapp.png" alt="Avatar" class="avatar"> <a>Virat</a></button></li>
+	
+				<li><button type="button" id="userSelect" onclick="userData('Ironman','img/users/ironman.jpg')"><img src="img/users/ironman.jpg" alt="Avatar" class="avatar"> <a>Ironman</a></button></li>
+				
+				<li><button type="button" id="userSelect" onclick="userData('Thor','img/users/thor.jpg')"><img src="img/users/thor.jpg" alt="Avatar" class="avatar"> <a>Thor</a></button></li>
+	
+
+				<li><button type="button" id="userSelect" onclick="userData('🥰Sparkles','img/users/sweety.jpg')"><img src="img/users/sweety.jpg" alt="Avatar" class="avatar">  <a>🥰Sparkles</a></button></li>
+
+				
+				</ul>			
+				
+			</div>
+		</div>
+
+        <div id="chat-window">
+            <div class="chat-header">
+				<img src="img/users/love.jpg" alt="Avatar" class="avatar">
+				<a href="#">Welcome To Love💖Chat</a>	
+				<span id="opts">
+					<a href=#>🧡</a>
+					<a href=#>🤍</a>
+					<a href=#>💚</a>
+				</span>
+			</div>
+
+			<div class="chat-footer">
+				<div class="entry">
+					<input type="text" name="msg_bar" id="msg_bar" placeholder="Enter The Message" maxlength="100" max="100">
+					<button type="button" id="send-btn" onclick="sendMsg()"><img src="img/back.png" alt="SEND" id="send-btn"></button>
+					
+				</div>
+			</div>
+
+			<div id="chat-body">
+				<div class="inmsg">
+					<p>  Welcome User!  🙏</p>
+				</div>
+				<div class="outmsg">
+					<p>😉 Stay Connected 💞</p>
+				</div>
+				
+			</div>
+			
+			
+        </div>
+    </div>
+
+<script>
+	
+/*Send Msg by Enter Key*/
+var sendEnter = document.getElementById("msg_bar");
+sendEnter.addEventListener("keyup",function(event){
+    if(event.keyCode === 13){
+        document.getElementById("send-btn").click();
+    }
+});
+
+/*Scroll Always Bottom*/
+var objDiv = document.getElementById("chat-window");
+objDiv.scrollTop = objDiv.scrollHeight-objDiv.clientHeight;
+
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+<script src="fire.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    height: 100%;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #57c1eb 0%,#246fa8 100%);
+    font-size: 10px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#user_search{
+  caret-color:#0048AA
+}
+#msg_bar{
+  caret-color:white;
+}
+#chat-container {
+    display: flex;
+    flex-grow: 1;
+    min-width: 800px;
+    max-width: 1000px;
+    max-height: 800px;
+    height: 95vh;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+#side-bar {
+    background: #0048AA;
+    border-radius: 10px 0 0 10px;
+    flex-basis: 275px;
+	  overflow: auto;
+}
+
+
+#allUser li{
+  height: 50px;
+	font-size:18px;
+	margin:10px;
+	margin-left:10px;
+	list-style-type: none;
+  background-color: rgba(255, 250, 250,0.25);
+  border-radius: 25px 10px 10px 25px;
+}
+
+#allUser :hover{
+    background: #27292c;
+}
+#nouser:hover {
+    background: none;
+}
+#allUser button{
+	text-decoration:none;
+  width:100%;
+	color:snow;
+  border: none;
+  background: none;
+  border-radius: 25px 10px 10px 25px;
+  cursor:grab;
+  text-align: left;
+  font-size: 20px;
+}
+
+#allUser .avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right:15px;
+  margin-left: -2px;
+}
+
+#user_search{
+  height:50px;
+  width:90%;
+  margin:10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color:rgba(255, 250, 250,0.25);
+  border-radius: 20px;
+  border-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  padding-inline: 20px;
+  color:black;
+}
+::placeholder{
+  font-size: 25px;
+  color:white;
+  opacity:0.5;
+  text-align: center;
+}
+
+input:focus,select:focus{
+  outline: none;
+}
+
+button,a{
+  outline: none;
+}
+#side-header{
+  background-color:#0048AA;
+  position: sticky;
+  top:0px;
+}
+
+/*       CHAT WINDOW         */
+#chat-window {
+  border-radius: 0 10px 10px 0;
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.chat-header{
+  width: 100%;
+  height:80px;
+  background-color:#2E2E2E;
+  position: sticky;
+  top:0px;
+  border-radius: 0 0 0 0;
+}
+
+.chat-header a{
+  text-decoration:none;
+	color:snow;
+  font-size: 24px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.chat-header .avatar{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 5px;
+  margin-left: 20px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.chat-header #opts a{
+  color: red;
+  float: right;
+  margin: 5px;
+  padding: 20px 10px 20px 0; 
+  margin-right: 20px; 
+  vertical-align: middle;
+}
+
+#chat-body .inmsg{
+  min-height: 50px;
+  height: max-content;
+  width: 300px;
+  background:-webkit-linear-gradient(pink,rgb(216, 71, 156));
+  border-radius: 20px 20px 20px 3px;
+  margin: 0 0 20px 8%;
+}
+#chat-body .inmsg p{
+  font-size:large;
+  text-align:left;
+  padding: 15px;
+}
+#chat-body .outmsg{
+  min-height: 50px;
+  height: max-content;
+  width: 300px;
+  background:-webkit-linear-gradient(pink,rgb(216, 71, 156));
+  border-radius: 20px 20px 3px 20px;
+  margin: 0 0 20px 50%;
+  word-wrap: break-word;
+}
+#chat-body .outmsg p{
+  font-size:large;
+  text-align:right;
+  padding: 15px;
+}
+#chat-body{
+  width: 100%;
+  margin-bottom: 80px;
+}
+.chat-footer .entry #msg_bar{
+  width:90%;
+  height:45px;
+  background-color:rgba(83, 92, 105, 0.75);
+  border-radius: 20px 0 0 20px;
+  border-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  padding-inline: 30px;
+  color:black;
+  margin-left:15px;
+  margin-bottom: 20px;
+  
+  }
+.chat-footer{
+  box-shadow: 10px 10px 10px 10px rgba(144, 155, 155, 0.5);
+  border-radius: 30px 30px 0 0;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  position:sticky;
+  top:89.5%;
+  margin-left:0px;
+  background-color: rgba(144, 155, 155, 0.35)
+
+}
+.entry button #send-btn{
+  width: 50px;
+  height: 45px;
+  background: #eee;
+  border-radius: 0 50% 50% 0;
+  color: #002C88;
+  text-decoration: none;
+  font-size: 3.6rem;
+  vertical-align:middle;
+  margin-bottom:11px;
+  margin-left:-10px;
+}
+.entry button{
+  border: none;
+  background: none;
+}
