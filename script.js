@@ -1,7 +1,15 @@
 window.addEventListener("beforeunload", function(event) {
     event.returnValue = "Are You Sure !";
 });
-
+document.addEventListener("contextmenu", function(e){
+  e.preventDefault();
+}, false);
+document.addEventListener("keydown", function(e){
+  if (e.ctrlKey || e.keyCode==123) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+});
 /*Search User in SideBar*/
 function searchUserName() {
     var input, filter,nouser,j , ul, li, a, i, txtValue;
